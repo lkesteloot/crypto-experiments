@@ -1,0 +1,12 @@
+
+Next:
+
+- Finish ERC20:
+    - Add allowance.
+    - Check security problems.
+    - Compare with base class.
+- How does liquidity work?
+- Investigate exchange/dex on ganache.
+- Investigate deploying to ropsten.
+    - Is Uniswap available?
+

@@ -9,6 +9,7 @@ contract GlitterCoin {
 
     constructor() public {
         mBalance[msg.sender] = 10000;
+        // Spec: A token contract which creates new tokens SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created.
     }
 
     function name() public pure returns (string memory) {
@@ -34,6 +35,7 @@ contract GlitterCoin {
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
         if (mBalance[msg.sender] < _value) {
+            // TODO: Spec says we should throw.
             return false;
         }
         mBalance[msg.sender] -= _value;
@@ -43,10 +45,12 @@ contract GlitterCoin {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public pure returns (bool success) {
+        // TODO: Spec says we should throw if not auth.
         return false;
     }
 
     function approve(address _spender, uint256 _value) public pure returns (bool success) {
+        // New value overwrites old one.
         return false;
     }
 
